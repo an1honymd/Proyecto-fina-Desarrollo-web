@@ -10,13 +10,6 @@
 
     <title>Variedades Chiquis | Gestión de Pedidos</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
-
     <link rel="stylesheet" href="pedidos.css">
 </head>
 
@@ -139,10 +132,6 @@
 
                 <div class="welcome">
 
-                    <span class="eyebrow">
-                        PANEL DE ADMINISTRACIÓN
-                    </span>
-
                     <h1>Gestión de pedidos</h1>
 
                     <p>
@@ -153,6 +142,19 @@
                 </div>
 
                 <div class="header-actions">
+
+                    <details class="menu-acciones">
+                        <summary>Exportar</summary>
+                        <div class="menu-lista">
+                            <button class="secondary-button" id="btnExportar" type="button">↓ Exportar pedidos</button>
+                            <button class="secondary-button" id="btnPDFTodos" type="button">📄 PDF de todos</button>
+                            <button class="secondary-button" id="btnPDFFiltrados" type="button">📋 PDF filtrados</button>
+                        </div>
+                    </details>
+                    <input type="file" id="inputImportar" accept=".json" hidden>
+                    <button class="btn btn-primary btn-compact" id="btnNuevoToolbar" type="button" hidden>+ Nuevo pedido</button>
+
+
 
                     <button
                         class="icon-button"
@@ -230,79 +232,7 @@
 
             <section class="toolbar-card orders-toolbar">
 
-                <div class="toolbar-top">
-
-                    <div>
-                        <h2>Gestión de pedidos</h2>
-                        <p id="resultadoTexto">Mostrando 0 pedidos</p>
-                    </div>
-
-                    <div class="toolbar-actions">
-
-                        <button
-                            class="secondary-button"
-                            id="btnExportar"
-                            type="button">
-
-                            ↓ Exportar pedidos
-                        </button>
-
-                        <button
-                            class="secondary-button"
-                            id="btnPDFTodos"
-                            type="button">
-
-                            📄 PDF de todos
-                        </button>
-
-                        <button
-                            class="secondary-button"
-                            id="btnPDFFiltrados"
-                            type="button">
-
-                            📋 PDF filtrados
-                        </button>
-
-                        <button
-                            class="btn btn-primary btn-compact"
-                            id="btnNuevoToolbar"
-                            type="button">
-
-                            + Nuevo pedido
-                        </button>
-
-                        <input
-                            type="file"
-                            id="inputImportar"
-                            accept=".json"
-                            hidden>
-
-                    </div>
-
-                </div>
-
                 <div class="toolbar-bottom">
-
-                    <div class="search-box">
-
-                        <span class="search-icon">⌕</span>
-
-                        <input
-                            type="search"
-                            id="searchInput"
-                            placeholder="Buscar por cliente, teléfono, producto o número de pedido..."
-                            autocomplete="off">
-
-                        <button
-                            type="button"
-                            class="clear-search"
-                            id="btnLimpiarBusqueda"
-                            title="Limpiar búsqueda">
-
-                            ×
-                        </button>
-
-                    </div>
 
                     <div class="filter-container order-filters">
 
@@ -367,6 +297,33 @@
                             ✓ Entregados
                             <span id="countEntregados">0</span>
                         </button>
+
+                    </div>
+
+                    <div class="busqueda-fila">
+
+                        <div class="search-box">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Buscar por cliente, teléfono, producto o número de pedido..."
+                            autocomplete="off">
+
+                        <button
+                            type="button"
+                            class="clear-search"
+                            id="btnLimpiarBusqueda"
+                            title="Limpiar búsqueda">
+
+                            ×
+                        </button>
+
+                    </div>
+
+                        <p id="resultadoTexto" class="resultado-texto">Mostrando 0 pedidos</p>
 
                     </div>
 
@@ -841,6 +798,24 @@
 
     <!-- Biblioteca para generar documentos PDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script> <script src="pedidos.js"></script>
+
+
+    <script>
+        document.addEventListener("click", function (e) {
+            document.querySelectorAll(".menu-acciones[open]").forEach(function (m) {
+                if (!m.contains(e.target) || e.target.closest(".menu-lista button")) {
+                    m.removeAttribute("open");
+                }
+            });
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                document.querySelectorAll(".menu-acciones[open]").forEach(function (m) {
+                    m.removeAttribute("open");
+                });
+            }
+        });
+    </script>
 
 </body>
 

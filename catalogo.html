@@ -4,421 +4,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo en línea de Variedades Chiquis: ropa, calzado, cocina y artículos para el hogar. Haz tu pedido y consulta su estado.">
+    <meta name="theme-color" content="#1d1b3f">
 
     <title>Variedades Chiquis | Catálogo</title>
 
+    <link rel="stylesheet" href="tienda.css">
     <link rel="stylesheet" href="catalogo.css">
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header class="encabezado">
-        <div class="encabezado-contenido">
-            <h1>Variedades Chiquis</h1>
-            <p>Bienvenido a nuestra tienda en línea</p>
+    <!-- Iconos -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-bolsa" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+        <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+        <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+        <symbol id="i-mas" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+        <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+        <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+    </svg>
+
+    <!-- BARRA SUPERIOR -->
+    <header class="barra">
+        <div class="barra-in contenedor">
+
+            <a class="marca" href="catalogo.html" aria-label="Variedades Chiquis, inicio">
+                <span class="marca-logo">VC</span>
+                <span class="marca-nombre">Variedades Chiquis</span>
+            </a>
+
+            <nav class="barra-links" aria-label="Principal">
+                <a href="#catalogo">Catálogo</a>
+                <a href="#como-comprar">Cómo comprar</a>
+                <a href="seguimiento.html">Consultar pedido</a>
+            </nav>
+
+            <button class="btn-carrito" type="button" aria-label="Abrir carrito">
+                <svg class="ico" aria-hidden="true"><use href="#i-bolsa"/></svg>
+                <span class="texto-carrito">Carrito</span>
+                <span id="contadorCarrito">0</span>
+            </button>
+
         </div>
-        <a href="index.html" class="btn-regresar">← Regresar</a>
-        <a href="seguimiento.html" class="btn-regresar">📦 Consultar mi pedido</a>
     </header>
 
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main>
 
-        <!-- CATÁLOGO -->
-        <section class="catalogo-section">
-
-            <div class="catalogo-header">
+        <!-- PORTADA -->
+        <section class="portada">
+            <div class="portada-in contenedor">
 
                 <div>
-                    <h2>Nuestro catálogo de productos</h2>
-                    <p>Explora nuestros productos y realiza tu pedido.</p>
+                    <h1>Haz tu pedido desde el catálogo y síguelo hasta tu puerta</h1>
+
+                    <p class="portada-texto">
+                        Ropa, calzado, cocina y artículos para el hogar.
+                        Elige lo que necesitas, envía tu pedido y revisa en qué paso va.
+                    </p>
+
+                    <div class="portada-acciones">
+                        <a class="btn btn-cuerda" href="#catalogo">Ver el catálogo</a>
+                        <a class="btn btn-contorno" href="seguimiento.html">Consultar mi pedido</a>
+                    </div>
                 </div>
 
-                <button class="btn-carrito" type="button">
-                    🛒 Mi carrito
-                    <span id="contadorCarrito">0</span>
-                </button>
-
-            </div>
-
-                <!-- BÚSQUEDA Y CATEGORÍAS -->
-            <div class="filtros-catalogo">
-
-                <!-- Barra de búsqueda -->
-                <div class="busqueda-productos">
-                    <span>🔎</span>
-
-                    <input
-                        type="search"
-                        id="buscadorProductos"
-                        placeholder="Buscar productos..."
-                        autocomplete="off">
-                </div>
-
-
-                <!-- Botones de categorías -->
-                <div class="categorias-productos">
-
-                    <button
-                        type="button"
-                        class="btn-categoria activo"
-                        data-categoria="todos">
-                        Todos
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn-categoria"
-                        data-categoria="casa">
-                        🏠 Casa
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn-categoria"
-                        data-categoria="cocina">
-                        🍳 Cocina
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn-categoria"
-                        data-categoria="ropa">
-                        👕 Ropa
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn-categoria"
-                        data-categoria="calzado">
-                        👟 Calzado
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn-categoria"
-                        data-categoria="otros">
-                        🌂 Otros
-                    </button>
-
+                <div class="collage" aria-hidden="true">
+                    <figure class="collage-arco"><img src="imagenes/sombrilla.jpg" alt=""></figure>
+                    <figure class="collage-circulo"><img src="imagenes/zapatosninos.jpg" alt=""></figure>
+                    <figure class="collage-pildora"><img src="imagenes/sarten.jpg" alt=""></figure>
                 </div>
 
             </div>
+        </section>
 
+        <div class="tejido" aria-hidden="true"></div>
+
+
+        <!-- CÓMO COMPRAR -->
+        <section class="como" id="como-comprar" aria-labelledby="titulo-como">
+            <h2 class="solo-lectores" id="titulo-como">Cómo comprar</h2>
+
+            <ol class="como-lista contenedor">
+                <li>
+                    <span class="como-numero" aria-hidden="true">1</span>
+                    <div>
+                        <h3>Elige tus productos</h3>
+                        <p>Agrega al carrito lo que necesitas del catálogo.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="como-numero" aria-hidden="true">2</span>
+                    <div>
+                        <h3>Envía tu pedido</h3>
+                        <p>Déjanos tu nombre, teléfono y dirección de entrega. Te damos tu número de pedido.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="como-numero" aria-hidden="true">3</span>
+                    <div>
+                        <h3>Sigue cada paso</h3>
+                        <p>Con tu número de pedido ves si está en preparación, despachado o en camino.
+                           <a href="seguimiento.html">Consultar pedido</a></p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+
+        <!-- CATÁLOGO -->
+        <section class="catalogo contenedor" id="catalogo" aria-labelledby="titulo-catalogo">
+
+            <div class="catalogo-cabecera">
+                <h2 id="titulo-catalogo">Catálogo</h2>
+                <p id="resultadoTexto" aria-live="polite">Mostrando todos los productos</p>
+            </div>
+
+            <div class="herramientas">
+
+                <div class="herramientas-fila">
+                    <label class="busqueda-productos">
+                        <svg class="ico" aria-hidden="true"><use href="#i-buscar"/></svg>
+                        <span class="solo-lectores">Buscar productos</span>
+                        <input type="search" id="buscadorProductos" placeholder="Buscar por nombre o descripción" autocomplete="off">
+                    </label>
+
+                    <label class="orden">
+                        Ordenar por
+                        <select id="ordenProductos">
+                            <option value="recomendado">Catálogo</option>
+                            <option value="precio-asc">Precio: menor a mayor</option>
+                            <option value="precio-desc">Precio: mayor a menor</option>
+                            <option value="nombre">Nombre (A-Z)</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="categorias-productos" role="group" aria-label="Categorías">
+                    <button type="button" class="btn-categoria activo" data-categoria="todos">Todos <span class="cuenta"></span></button>
+                    <button type="button" class="btn-categoria" data-categoria="casa">Casa <span class="cuenta"></span></button>
+                    <button type="button" class="btn-categoria" data-categoria="cocina">Cocina <span class="cuenta"></span></button>
+                    <button type="button" class="btn-categoria" data-categoria="ropa">Ropa <span class="cuenta"></span></button>
+                    <button type="button" class="btn-categoria" data-categoria="calzado">Calzado <span class="cuenta"></span></button>
+                    <button type="button" class="btn-categoria" data-categoria="otros">Otros <span class="cuenta"></span></button>
+                </div>
+
+            </div>
 
             <!-- PRODUCTOS -->
             <div class="productos-grid" id="productosGrid">
 
-
-                <!-- PRODUCTO 1 -->
-                <article class="producto-card" data-categoria="ropa">
-
+                <article class="producto-card" data-categoria="ropa" data-nombre="Camisa Hombre" data-precio="85">
                     <div class="producto-imagen">
-                        <img src="https://walmartgt.vtexassets.com/arquivos/ids/326801/Camisa-Caballero-Manga-Larga-1-28066.jpg?v=638052587722200000"
-                             alt="Producto 1">
+                        <img src="https://walmartgt.vtexassets.com/arquivos/ids/326801/Camisa-Caballero-Manga-Larga-1-28066.jpg?v=638052587722200000" alt="Camisa de manga larga para hombre" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 01</span>
+                        <strong class="producto-precio">Q 85.00</strong>
                     </div>
-
                     <div class="producto-info">
                         <h3>Camisa Hombre</h3>
-                        <p>
-                          Camisa talla xs hasta la XXL<br>
-                          Manga Larga, (Tela poliester)
-                        </p>
-                        <div class="producto-footer">
-                            <strong>Q 85.00</strong>
-                            <button type="button"class="btn-agregar">+ Agregar
-                            </button>
-                        </div>
+                        <p>Camisa de hombre, manga larga, en tela de poliéster. Tallas XS hasta XXL.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
-
                 </article>
 
-
-                <!-- PRODUCTO 2 -->
-                <article class="producto-card" data-categoria="cocina">
-
+                <article class="producto-card" data-categoria="cocina" data-nombre="Sartén" data-precio="45">
                     <div class="producto-imagen">
-                        <img src="https://plazavea.vteximg.com.br/arquivos/ids/404329-418-418/20134696.jpg"
-                             alt="Producto 2">
+                        <img src="imagenes/sarten.jpg" alt="Sartén antiadherente negra" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 02</span>
+                        <strong class="producto-precio">Q 45.00</strong>
                     </div>
-
                     <div class="producto-info">
-
-                        <h3>Sarten</h3>
-
-                        <p>
-                            Sarten de aluminio, antiadherente, 24cm
-                        </p>
-
-                        <div class="producto-footer">
-
-                            <strong>Q 45.00</strong>
-
-                            <button type="button"
-                                    class="btn-agregar">
-                                + Agregar
-                            </button>
-
-                        </div>
-
+                        <h3>Sartén</h3>
+                        <p>Sartén de aluminio antiadherente de 24 cm.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
-
                 </article>
 
-
-                <!-- PRODUCTO 3 -->
-                <article class="producto-card" data-categoria="ropa">
-
+                <article class="producto-card" data-categoria="ropa" data-nombre="Vestido Dama" data-precio="305">
                     <div class="producto-imagen">
-                        <img src="https://png.pngtree.com/png-clipart/20250522/original/pngtree-elegant-blue-evening-gown-with-a-sweetheart-neckline-fitted-bodice-and-png-image_21056297.png" alt="Producto 3"></div>
-
+                        <img class="foto" src="imagenes/vestidodama.jpg" alt="Vestido de dama con detalles azules" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 03</span>
+                        <strong class="producto-precio">Q 305.00</strong>
+                    </div>
                     <div class="producto-info">
-
                         <h3>Vestido Dama</h3>
-
-                        <p>Vestido de algodón, talla S hasta la XL</p>
-                            <div class="producto-footer">
-                            <strong>Q 305.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
-                    </div> 
+                        <p>Vestido de algodón para dama. Tallas S hasta XL.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
+                    </div>
                 </article>
 
-                <!-- PRODUCTO 4 -->
-                <article class="producto-card" data-categoria="calzado">
+                <article class="producto-card" data-categoria="calzado" data-nombre="Zapatos Niños" data-precio="250">
                     <div class="producto-imagen">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4R3vuKtZ8X2h-15iCNOMTAn8oUa9GsthftP5eKT86xDCBSFxMy3vBT6s&s=10" alt="Producto 4"></div>
-
+                        <img src="imagenes/zapatosninos.jpg" alt="Zapatos deportivos para niños" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 04</span>
+                        <strong class="producto-precio">Q 250.00</strong>
+                    </div>
                     <div class="producto-info">
                         <h3>Zapatos Niños</h3>
-                        <p>Zapatos para niños, talla 36 hasta la 42</p>
-                            <div class="producto-footer">
-                            <strong>Q 250.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <p>Zapatos para niños, tallas 36 hasta 42.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
 
-                <!-- PRODUCTO 5 -->
-                <article class="producto-card" data-categoria="otros">
+                <article class="producto-card" data-categoria="otros" data-nombre="Sombrilla" data-precio="40">
                     <div class="producto-imagen">
-                        <img src="https://www.ajumbo.com/web/image/product.template/91667/image_1024?unique=3cc4afd" alt="Producto 5"></div>
-
+                        <img src="imagenes/sombrilla.jpg" alt="Sombrilla verde abierta y cerrada" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 05</span>
+                        <strong class="producto-precio">Q 40.00</strong>
+                    </div>
                     <div class="producto-info">
                         <h3>Sombrilla</h3>
-                        <p>Sombrilla de colores, para uso diario</p>
-                            <div class="producto-footer">
-                            <strong>Q 40.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <p>Sombrilla de colores para uso diario.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
 
-                <!-- PRODUCTO 6 -->
-                <article class="producto-card" data-categoria="ropa">
+                <article class="producto-card" data-categoria="ropa" data-nombre="Calcetines" data-precio="40">
                     <div class="producto-imagen">
-                        <img src="https://par2.gt/cdn/shop/files/30077740_1200x.jpg?v=1754030383" alt="Producto 6"></div>
-
+                        <img src="imagenes/calcetines.jpg" alt="Par de calcetines grises" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 06</span>
+                        <strong class="producto-precio">Q 40.00</strong>
+                    </div>
                     <div class="producto-info">
                         <h3>Calcetines</h3>
-                        <p>Calcetines de algodón, talla S hasta la XL</p>
-                            <div class="producto-footer">
-                            <strong>Q 40.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <p>Calcetines de algodón. Tallas S hasta XL.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
 
-                <!-- PRODUCTO 7 -->
-                <article class="producto-card" data-categoria="casa">
+                <article class="producto-card" data-categoria="casa" data-nombre="Almohadas" data-precio="35">
                     <div class="producto-imagen">
-                        <img src="https://amsagt.com/wp-content/uploads/2022/01/1800.jpg" alt="Producto 7"></div>
-
+                        <img class="foto" src="imagenes/almoadas.jpg" alt="Almohada blanca sobre una cama" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 07</span>
+                        <strong class="producto-precio">Q 35.00</strong>
+                    </div>
                     <div class="producto-info">
-                        <h3>Almoadas</h3>
-                        <p>Almoadas de algodón, talla S hasta la XL<br>
-                            (no incluyen relleno)</p>
-                            <div class="producto-footer">
-                            <strong>Q 35.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <h3>Almohadas</h3>
+                        <p>Almohadas de algodón, tallas S hasta XL. No incluyen relleno.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
 
-
-                <!-- PRODUCTO 8 -->
-                <article class="producto-card" data-categoria="casa">
+                <article class="producto-card" data-categoria="casa" data-nombre="Sillas Plásticas" data-precio="35">
                     <div class="producto-imagen">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY0FDc_hLb1wPRDjoX0tJS_moXvQBal5377YYObT5SqrUpOeIv_FWKj5U&s=10" alt="Producto 8"></div>
-
+                        <img src="imagenes/silla.jpg" alt="Silla plástica café con brazos" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 08</span>
+                        <strong class="producto-precio">Q 35.00</strong>
+                    </div>
                     <div class="producto-info">
-                        <h3>Sillas Pásticas</h3>
-                        <p>Sillas pásticas de colores, para uso diario<br>
-                            solamente por docena</p>
-                            <div class="producto-footer">
-                            <strong>Q 35.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <h3>Sillas Plásticas</h3>
+                        <p>Sillas plásticas de colores para uso diario. Se venden solamente por docena.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
 
-                 <!-- PRODUCTO 9 -->
-                <article class="producto-card" data-categoria="otros">
+                <article class="producto-card" data-categoria="otros" data-nombre="Piscina Inflable" data-precio="35">
                     <div class="producto-imagen">
-                        <img src="https://walmartgt.vtexassets.com/arquivos/ids/335618-800-450?v=638088430440800000&width=800&height=450&aspect=true" alt="Producto 9"></div>
-
+                        <img src="imagenes/picina.jpg" alt="Piscina inflable rectangular azul" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 09</span>
+                        <strong class="producto-precio">Q 35.00</strong>
+                    </div>
                     <div class="producto-info">
-                        <h3>picinas</h3>
-                        <p>inflables para uso exterior<br>
-                        (no incluyen inflador)</p>
-                            <div class="producto-footer">
-                            <strong>Q 35.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <h3>Piscina Inflable</h3>
+                        <p>Piscina inflable para uso exterior. No incluye inflador.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
 
-                <!---producto 10-->
-                <article class="producto-card" data-categoria="calzado">
+                <article class="producto-card" data-categoria="calzado" data-nombre="Botas para Invierno" data-precio="450">
                     <div class="producto-imagen">
-                        <img src="https://img.pacifiko.com/PROD/resize/1/250x250/B0CG9Q9DJC.jpg" alt="Producto 9"></div>
-
+                        <img class="foto" src="imagenes/botasinvierno.jpg" alt="Botas acolchonadas negras para invierno" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('sin-imagen')">
+                        <span class="producto-codigo">Art. 10</span>
+                        <strong class="producto-precio">Q 450.00</strong>
+                    </div>
                     <div class="producto-info">
                         <h3>Botas para Invierno</h3>
-                        <p>Acolchonada, disponibles:<br>
-                         en talla 28 asta la 36.</p>
-                            <div class="producto-footer">
-                            <strong>Q 450.00</strong>
-                            <button type="button" class="btn-agregar">+ Agregar</button>
-                        </div>
+                        <p>Botas acolchonadas, disponibles de la talla 28 hasta la 36.</p>
+                        <button type="button" class="btn-agregar">
+                            <svg class="ico" aria-hidden="true"><use href="#i-mas"/></svg>
+                            <span>Agregar<span class="texto-agregar-largo"> al carrito</span></span>
+                        </button>
                     </div>
                 </article>
+            </div>
+
+            <div class="sin-resultados" id="sinResultados" hidden>
+                <h3>No encontramos productos</h3>
+                <p>Revisa cómo escribiste la búsqueda o prueba con otra categoría.</p>
+                <button type="button" class="btn btn-oscuro" id="verTodos">Ver todos los productos</button>
             </div>
 
         </section>
 
-
-
-            <!-- Ventana del carrito -->
-            <div id="ventanaCarrito" class="ventana-carrito">
-                <div class="carrito-contenido">
-
-                    <button type="button" id="cerrarCarrito" class="cerrar-carrito">
-                        ✕
-                    </button>
-
-                    <h2>Mi carrito de compras</h2>
-
-                    <div id="listaCarrito">
-                        <p>Tu carrito está vacío.</p>
-                    </div>
-
-                    <h3>
-                        Total: <span id="totalCarrito">Q0.00</span>
-                    </h3>
-
-                    <button type="button" id="continuarPedido" class="btn-continuar">
-                        Continuar con el pedido
-                    </button>
-
-                </div>
-            </div>
-
-
-
-        <!-- DATOS DEL CLIENTE -->
-        <div id="ventanaDatosCliente" class="ventana-datos-cliente">
-        <div class="datos-cliente-contenido">
-            <button type="button" id="cerrarDatosCliente" class="cerrar-datos">
-            ✕
-        </button>
-
-            <h2>Datos para realizar mi pedido</h2>
-
-            <form id="formularioPedido">
-
-
-                <!-- NOMBRE -->
-                <div class="campo-cliente">
-
-                    <label for="nombreCliente">
-                        Nombre completo:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nombreCliente"
-                        placeholder="Ingresa tu nombre"
-                        required>
-
-                </div>
-
-
-                <!-- TELÉFONO -->
-                <div class="campo-cliente">
-
-                    <label for="telefonoCliente">
-                        Teléfono:
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="telefonoCliente"
-                        placeholder="Ingresa tu teléfono"
-                        required>
-
-                </div>
-
-
-                <!-- DIRECCIÓN -->
-                <div class="campo-cliente">
-
-                    <label for="direccionCliente">
-                        Dirección de entrega:
-                    </label>
-
-                    <textarea
-                        id="direccionCliente"
-                        placeholder="Ingresa tu dirección"
-                        required></textarea>
-
-                </div>
-
-
-                <!-- OBSERVACIONES -->
-                <div class="campo-cliente">
-
-                    <label for="observacionesCliente">
-                        Observaciones:
-                    </label>
-
-                    <textarea
-                        id="observacionesCliente"
-                        placeholder="Información adicional (opcional)"></textarea>
-
-                </div>
-
-
-                <!-- BOTÓN -->
-                <button
-                    type="submit"
-                    class="btn-realizar-pedido">
-
-                    Realizar pedido
-
-                </button>
-
-            </form>
-
-           </div>
-            </div>
-
     </main>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- PIE -->
+    <footer class="pie">
+        <div class="tejido" aria-hidden="true"></div>
+
+        <div class="pie-in contenedor">
+            <div>
+                <div class="marca">
+                    <span class="marca-logo">VC</span>
+                    <span class="marca-nombre">Variedades Chiquis</span>
+                </div>
+                <p class="pie-texto">Ropa, calzado, cocina y artículos para el hogar, por catálogo.</p>
+            </div>
+
+            <div>
+                <h3>Tu pedido</h3>
+                <ul>
+                    <li><a href="#catalogo">Ver el catálogo</a></li>
+                    <li><a href="seguimiento.html">Consultar pedido</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Personal de la tienda</h3>
+                <ul>
+                    <li><a href="index.html">Panel de administración</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pie-derechos contenedor">© 2026 Variedades Chiquis, S.A.</div>
+    </footer>
+
+
+    <!-- CARRITO -->
+    <div id="ventanaCarrito" class="ventana-carrito" aria-hidden="true">
+        <aside class="carrito-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-carrito">
+
+            <div class="carrito-cabecera">
+                <h2 id="titulo-carrito">Mi carrito</h2>
+                <button type="button" id="cerrarCarrito" class="cerrar-ventana" aria-label="Cerrar carrito">
+                    <svg class="ico" aria-hidden="true"><use href="#i-cerrar"/></svg>
+                </button>
+            </div>
+
+            <div id="listaCarrito"></div>
+
+            <div class="carrito-pie">
+                <div class="carrito-total">
+                    <span>Total</span>
+                    <span id="totalCarrito">Q0.00</span>
+                </div>
+                <button type="button" id="continuarPedido" class="btn btn-primario btn-continuar">
+                    Continuar con el pedido
+                </button>
+            </div>
+
+        </aside>
+    </div>
+
+
+    <!-- DATOS DEL CLIENTE -->
+    <div id="ventanaDatosCliente" class="ventana-datos-cliente" aria-hidden="true">
+        <div class="datos-cliente-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-datos">
+
+            <div class="modal-cabecera">
+                <div>
+                    <h2 id="titulo-datos">Datos para tu pedido</h2>
+                    <p>Los usaremos para preparar y entregar tu compra.</p>
+                </div>
+                <button type="button" id="cerrarDatosCliente" class="cerrar-ventana" aria-label="Cerrar">
+                    <svg class="ico" aria-hidden="true"><use href="#i-cerrar"/></svg>
+                </button>
+            </div>
+
+            <div class="resumen-pedido" id="resumenPedido"></div>
+
+            <form id="formularioPedido" novalidate>
+
+                <div class="campo-cliente campo-cliente-registrado">
+                    <label for="clienteRegistrado">¿Ya estás registrado como cliente?</label>
+                    <select id="clienteRegistrado">
+                        <option value="nuevo">Comprar como cliente nuevo</option>
+                    </select>
+                    <small>Selecciona tu nombre para cargar tus datos registrados.</small>
+                </div>
+
+                <div class="fila-campos">
+                    <div class="campo-cliente">
+                        <label for="nombreCliente">Nombre completo</label>
+                        <input type="text" id="nombreCliente" placeholder="Ej. Ana Pérez" autocomplete="name" required>
+                    </div>
+
+                    <div class="campo-cliente">
+                        <label for="telefonoCliente">Teléfono</label>
+                        <input type="tel" id="telefonoCliente" placeholder="Ej. 5555-1234" autocomplete="tel" required>
+                    </div>
+                </div>
+
+                <div class="campo-cliente">
+                    <label for="direccionCliente">Dirección de entrega</label>
+                    <textarea id="direccionCliente" placeholder="Zona, calle, número de casa y referencias" autocomplete="street-address" required></textarea>
+                </div>
+
+                <div class="campo-cliente">
+                    <label for="observacionesCliente">Observaciones (opcional)</label>
+                    <textarea id="observacionesCliente" placeholder="Talla, color o cualquier indicación para tu pedido"></textarea>
+                </div>
+
+                <p class="error-pedido" id="errorPedido" role="alert" hidden></p>
+
+                <button type="submit" class="btn btn-primario btn-realizar-pedido">Realizar pedido</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- PEDIDO REALIZADO -->
+    <div id="ventanaExito" class="ventana-exito" aria-hidden="true">
+        <div class="exito-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-exito">
+
+            <div class="exito-icono">
+                <svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+            </div>
+
+            <h2 id="titulo-exito">Recibimos tu pedido</h2>
+            <p id="exitoDetalle">Total del pedido: Q0.00</p>
+
+            <div class="exito-boleta">
+                <small>Tu número de pedido</small>
+                <strong id="exitoNumero">PED-0000</strong>
+                <button type="button" class="btn-copiar" id="exitoCopiar">
+                    <svg class="ico" aria-hidden="true"><use href="#i-copiar"/></svg>
+                    Copiar número
+                </button>
+            </div>
+
+            <p class="exito-nota" id="exitoNota">
+                Guárdalo: lo necesitas, junto con tu teléfono, para consultar el estado de tu pedido.
+            </p>
+
+            <div class="exito-acciones">
+                <a class="btn btn-primario" id="exitoSeguir" href="seguimiento.html">Consultar mi pedido</a>
+                <button type="button" class="btn btn-claro" id="exitoCerrar">Seguir comprando</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- AVISO -->
+    <div class="aviso" id="aviso" role="status" aria-live="polite">
+        <svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+        <span id="avisoTexto"></span>
+    </div>
+
+
     <script src="catalogo.js"></script>
 
 </body>

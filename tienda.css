@@ -1,0 +1,479 @@
+/* =====================================================
+   TIENDA · estilos compartidos (catálogo y consulta de pedido)
+   Marca: Variedades Chiquis
+   Paleta inspirada en los tejidos guatemaltecos:
+   tinta índigo, magenta, cúrcuma y turquesa.
+===================================================== */
+
+/* ---------- Fuentes locales (funcionan sin internet) ---------- */
+
+@font-face {
+    font-family: "Bricolage Grotesque";
+    src: url("fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+    font-weight: 200 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Figtree";
+    src: url("fonts/figtree-latin-wght-normal.woff2") format("woff2");
+    font-weight: 300 900;
+    font-display: swap;
+}
+
+/* ---------- Variables ---------- */
+
+:root {
+    --tinta: #1d1b3f;
+    --tinta-2: #2c2966;
+    --magenta: #d61f69;
+    --magenta-osc: #b3175a;
+    --curcuma: #ffb81c;
+    --turquesa: #0e9f9a;
+    --turquesa-claro: #d7f3f1;
+    --rosa-claro: #ffd3e4;
+    --papel: #f5f4fa;
+    --blanco: #ffffff;
+    --texto: #1d1b3f;
+    --suave: #5b5977;
+    --linea: #e1dfee;
+    --error: #b3261e;
+    --error-fondo: #fdecea;
+
+    --fuente-titulo: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+    --fuente-texto: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --alto-barra: 68px;
+    --ancho: 1200px;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--alto-barra) + 16px);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--papel);
+    color: var(--texto);
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.sin-scroll {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    background: none;
+}
+
+a {
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulo);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+}
+
+:focus-visible {
+    outline: 3px solid var(--curcuma);
+    outline-offset: 2px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- Iconos ---------- */
+
+.ico {
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- Franja de tejido ---------- */
+
+.tejido {
+    height: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--magenta) 0 36px,
+        var(--curcuma) 36px 60px,
+        var(--turquesa) 60px 96px,
+        var(--tinta-2) 96px 108px
+    );
+}
+
+/* ---------- Barra superior ---------- */
+
+.barra {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--linea);
+}
+
+.barra-in {
+    height: var(--alto-barra);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.marca-logo {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: var(--magenta);
+    color: var(--blanco);
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    box-shadow: 3px 3px 0 var(--curcuma);
+}
+
+.marca-nombre {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.barra-links {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+}
+
+.barra-links a {
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+    color: var(--suave);
+    transition: background 0.2s, color 0.2s;
+}
+
+.barra-links a:hover {
+    background: var(--papel);
+    color: var(--tinta);
+}
+
+.barra-links a[aria-current="page"] {
+    background: var(--tinta);
+    color: var(--blanco);
+}
+
+.btn-carrito {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--blanco);
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.btn-carrito:hover {
+    background: var(--magenta);
+}
+
+#contadorCarrito {
+    min-width: 24px;
+    height: 24px;
+    padding: 0 7px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--curcuma);
+    color: var(--tinta);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#contadorCarrito.salto {
+    animation: salto 0.35s ease;
+}
+
+@keyframes salto {
+    40% {
+        transform: scale(1.45);
+    }
+}
+
+/* ---------- Botones generales ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.btn-primario {
+    background: var(--magenta);
+    color: var(--blanco);
+}
+
+.btn-primario:hover {
+    background: var(--magenta-osc);
+}
+
+.btn-cuerda {
+    background: var(--curcuma);
+    color: var(--tinta);
+}
+
+.btn-cuerda:hover {
+    box-shadow: 0 6px 0 rgba(255, 184, 28, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-contorno {
+    box-shadow: inset 0 0 0 2px currentColor;
+}
+
+.btn-contorno:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-oscuro {
+    background: var(--tinta);
+    color: var(--blanco);
+}
+
+.btn-oscuro:hover {
+    background: var(--tinta-2);
+}
+
+.btn-claro {
+    background: var(--papel);
+    color: var(--tinta);
+    box-shadow: inset 0 0 0 1px var(--linea);
+}
+
+.btn-claro:hover {
+    background: var(--linea);
+}
+
+/* ---------- Aviso emergente ---------- */
+
+.aviso {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: calc(100% - 32px);
+    padding: 13px 20px;
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--blanco);
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 14px 40px rgba(29, 27, 63, 0.35);
+    opacity: 0;
+    transform: translate(-50%, 20px);
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.aviso.visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.aviso .ico {
+    color: var(--curcuma);
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+    margin-top: auto;
+    background: var(--tinta);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.pie-in {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+}
+
+.pie .marca-nombre {
+    color: var(--blanco);
+}
+
+.pie-texto {
+    max-width: 34ch;
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+.pie h3 {
+    margin-bottom: 12px;
+    color: var(--blanco);
+    font-size: 16px;
+}
+
+.pie ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.pie a {
+    text-decoration: none;
+}
+
+.pie a:hover {
+    color: var(--curcuma);
+    text-decoration: underline;
+}
+
+.pie-derechos {
+    padding-top: 22px;
+    padding-bottom: 24px;
+    font-size: 14px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+
+    :root {
+        --alto-barra: 62px;
+    }
+
+    .contenedor {
+        padding: 0 16px;
+    }
+
+    .barra-in {
+        gap: 12px;
+    }
+
+    .barra-links a[href*="como-comprar"] {
+        display: none;
+    }
+
+    .pie-in {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .barra-links a[href$="#catalogo"] {
+        display: none;
+    }
+
+    .marca-nombre {
+        display: none;
+    }
+
+    .btn-carrito .texto-carrito {
+        display: none;
+    }
+
+    .btn-carrito {
+        padding: 10px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

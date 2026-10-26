@@ -187,7 +187,7 @@
 
 .field select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(123, 79, 53, 0.08);
+    box-shadow: 0 0 0 3px rgba(214,31,105, 0.08);
 }
 
 .product-heading {
@@ -361,4 +361,229 @@
     .line-total {
         justify-content: flex-start;
     }
+}
+
+
+/* =========================================================
+   TEMA CHIQUIS · pedidos
+========================================================= */
+
+.pending-icon {
+    background: var(--orange-bg);
+    color: var(--orange);
+}
+
+.sales-icon {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.btn-compact {
+    min-height: 44px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+/* Un color distinto para cada estado del pedido */
+
+.order-status {
+    padding: 6px 12px;
+    font-size: 12.5px;
+}
+
+.status-recibido {
+    background: var(--orange-bg);
+    color: var(--orange);
+}
+
+.status-preparacion {
+    background: var(--blue-bg);
+    color: var(--blue);
+}
+
+.status-preparado {
+    background: var(--violet-bg);
+    color: var(--violet);
+}
+
+.status-despachado {
+    background: var(--teal-bg);
+    color: var(--teal);
+}
+
+.status-entrega {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.status-entregado {
+    background: var(--green-bg);
+    color: var(--green);
+}
+
+body.dark .status-entrega {
+    color: #ff7fb3;
+}
+
+.pedido-number {
+    font-size: 14px;
+}
+
+.pedido-origin,
+.pedido-client small,
+.products-summary small {
+    font-size: 12px;
+}
+
+.products-summary strong,
+.pedido-total {
+    font-size: 14px;
+}
+
+.field select {
+    height: 46px;
+    border-radius: 10px;
+    font-size: 14.5px;
+}
+
+.field select:focus {
+    border-color: var(--text);
+    box-shadow: 0 0 0 3px rgba(255, 184, 28, 0.35);
+}
+
+.product-row {
+    border-radius: 12px;
+}
+
+.product-field label {
+    font-size: 12px;
+}
+
+.product-field input {
+    height: 42px;
+    font-size: 13.5px;
+}
+
+.line-total {
+    height: 42px;
+    font-size: 13.5px;
+}
+
+.remove-product {
+    height: 42px;
+}
+
+.products-error {
+    font-size: 12.5px;
+}
+
+.order-total {
+    border-radius: 12px;
+}
+
+.order-total span {
+    font-size: 13.5px;
+}
+
+.order-total strong {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.order-detail-modal .order-number {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+}
+
+.detail-products > span {
+    font-size: 12px;
+}
+
+.detail-product-row {
+    font-size: 13.5px;
+}
+
+/* Barra de búsqueda y filtros en dos filas (los filtros son muchos) */
+
+.orders-toolbar .toolbar-bottom {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.order-filters {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.filter-button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Tabla de pedidos: columnas sin cortes raros */
+
+.pedidos-table {
+    min-width: 1100px;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.pedido-number,
+.pedido-origin,
+.pedidos-table td:nth-child(5),
+.pedido-total,
+.order-status {
+    white-space: nowrap;
+}
+
+.pedidos-table td:nth-child(5) {
+    font-size: 13px;
+}
+
+/* Historial de estados en el detalle: badge a la izquierda, fecha a la derecha */
+
+#detalleHistorial .detail-product-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    min-height: 0;
+}
+
+#detalleHistorial .order-status {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+#detalleHistorial small {
+    color: var(--muted, #5b5977);
+    font-size: 13px;
+    text-align: right;
+}
+
+/* Panel: ajustes de pedidos para la nueva organización */
+
+.orders-toolbar .toolbar-bottom {
+    flex-direction: column;
+}
+
+.order-filters {
+    padding: 0 14px;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* El botón "Nuevo pedido" de la barra antigua queda oculto (ya existe el de la cabecera) */
+#btnNuevoToolbar {
+    display: none !important;
 }

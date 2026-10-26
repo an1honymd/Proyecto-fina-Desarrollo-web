@@ -10,13 +10,6 @@
 
     <title>Variedades Chiquis | Gestión de Clientes</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
-
     <link rel="stylesheet" href="cliente.css">
 </head>
 
@@ -147,10 +140,6 @@
 
                 <div class="welcome">
 
-                    <span class="eyebrow">
-                        PANEL DE ADMINISTRACIÓN
-                    </span>
-
                     <h1>
                         Gestión de clientes
                     </h1>
@@ -162,6 +151,17 @@
                 </div>
 
                 <div class="header-actions">
+
+                    <details class="menu-acciones">
+                        <summary>Datos</summary>
+                        <div class="menu-lista">
+                            <button class="secondary-button" id="btnExportar" type="button">↓ Exportar clientes</button>
+                            <button class="secondary-button" id="btnImportar" type="button">↑ Importar clientes</button>
+                        </div>
+                    </details>
+                    <input type="file" id="inputImportar" accept=".json" hidden>
+
+
 
                     <button
                         class="icon-button"
@@ -294,77 +294,7 @@
 
             <section class="toolbar-card">
 
-                <div class="toolbar-top">
-
-                    <div>
-
-                        <h2>
-                            Directorio de clientes
-                        </h2>
-
-                        <p id="resultadoTexto">
-                            Mostrando todos los clientes
-                        </p>
-
-                    </div>
-
-                    <div class="toolbar-actions">
-
-                        <button
-                            class="secondary-button"
-                            id="btnExportar"
-                            type="button">
-
-                            ↓ Exportar
-
-                        </button>
-
-                        <button
-                            class="secondary-button"
-                            id="btnImportar"
-                            type="button">
-
-                            ↑ Importar
-
-                        </button>
-
-                        <input
-                            type="file"
-                            id="inputImportar"
-                            accept=".json"
-                            hidden>
-
-                    </div>
-
-                </div>
-
-
                 <div class="toolbar-bottom">
-
-                    <div class="search-box">
-
-                        <span class="search-icon">
-                            ⌕
-                        </span>
-
-                        <input
-                            type="search"
-                            id="searchInput"
-                            placeholder="Buscar por nombre, teléfono, correo o NIT..."
-                            autocomplete="off">
-
-                        <button
-                            type="button"
-                            class="clear-search"
-                            id="btnLimpiarBusqueda"
-                            title="Limpiar búsqueda">
-
-                            ×
-
-                        </button>
-
-                    </div>
-
 
                     <div class="filter-container">
 
@@ -397,6 +327,36 @@
                             <span id="countMayoristas">0</span>
 
                         </button>
+
+                    </div>
+
+                    <div class="busqueda-fila">
+
+                        <div class="search-box">
+
+                        <span class="search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Buscar por nombre, teléfono, correo o NIT..."
+                            autocomplete="off">
+
+                        <button
+                            type="button"
+                            class="clear-search"
+                            id="btnLimpiarBusqueda"
+                            title="Limpiar búsqueda">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+                        <p id="resultadoTexto" class="resultado-texto">Mostrando todos los clientes</p>
 
                     </div>
 
@@ -1376,6 +1336,24 @@
 
 
     <script src="cliente.js"></script>
+
+
+    <script>
+        document.addEventListener("click", function (e) {
+            document.querySelectorAll(".menu-acciones[open]").forEach(function (m) {
+                if (!m.contains(e.target) || e.target.closest(".menu-lista button")) {
+                    m.removeAttribute("open");
+                }
+            });
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                document.querySelectorAll(".menu-acciones[open]").forEach(function (m) {
+                    m.removeAttribute("open");
+                });
+            }
+        });
+    </script>
 
 </body>
 

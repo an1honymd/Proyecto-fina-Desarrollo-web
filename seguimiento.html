@@ -4,85 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta el estado de tu pedido de Variedades Chiquis con tu número de pedido y tu teléfono.">
+    <meta name="theme-color" content="#1d1b3f">
+
     <title>Variedades Chiquis | Consultar pedido</title>
+
+    <link rel="stylesheet" href="tienda.css">
     <link rel="stylesheet" href="seguimiento.css">
 </head>
 
 <body>
 
-    <header class="encabezado">
-        <div class="encabezado-contenido">
-            <h1>Variedades Chiquis</h1>
-            <p>Consulta el estado de tu pedido</p>
+    <!-- BARRA SUPERIOR -->
+    <header class="barra">
+        <div class="barra-in contenedor">
+
+            <a class="marca" href="catalogo.html" aria-label="Variedades Chiquis, ir al catálogo">
+                <span class="marca-logo">VC</span>
+                <span class="marca-nombre">Variedades Chiquis</span>
+            </a>
+
+            <nav class="barra-links" aria-label="Principal">
+                <a href="catalogo.html#catalogo">Catálogo</a>
+                <a href="catalogo.html#como-comprar">Cómo comprar</a>
+                <a href="seguimiento.html" aria-current="page">Consultar pedido</a>
+            </nav>
+
         </div>
-        <nav class="encabezado-enlaces">
-            <a href="catalogo.html" class="btn-regresar">← Volver al catálogo</a>
-        </nav>
     </header>
+
 
     <main>
 
-        <!-- FORMULARIO DE CONSULTA -->
-        <section class="consulta-card">
-            <h2>Consultar pedido</h2>
-            <p>Ingresa el número de pedido que recibiste al finalizar tu compra y el teléfono con el que lo registraste.</p>
-
-            <form id="formConsulta" novalidate>
-                <div class="campo">
-                    <label for="numeroPedido">Número de pedido</label>
-                    <input type="text" id="numeroPedido" placeholder="Ej. PED-0001" autocomplete="off" maxlength="20">
-                </div>
-
-                <div class="campo">
-                    <label for="telefonoPedido">Teléfono</label>
-                    <input type="tel" id="telefonoPedido" placeholder="Ej. 5555-1234" autocomplete="off" maxlength="20">
-                </div>
-
-                <p class="mensaje-error" id="mensajeError" role="alert" hidden></p>
-
-                <button type="submit" class="btn-consultar">Buscar pedido</button>
-            </form>
+        <!-- PORTADA -->
+        <section class="portada-seguimiento">
+            <div class="contenedor">
+                <h1>Consulta el estado de tu pedido</h1>
+                <p>Escribe tu número de pedido y el teléfono con el que lo registraste.</p>
+            </div>
         </section>
 
-        <!-- RESULTADO -->
-        <section class="resultado-card" id="resultado" hidden>
+        <div class="tejido" aria-hidden="true"></div>
 
-            <div class="resultado-encabezado">
-                <div>
-                    <span class="etiqueta">Pedido</span>
-                    <h2 id="resNumero">PED-0001</h2>
-                    <p id="resCliente">Cliente</p>
+
+        <div class="contenedor contenido">
+
+            <!-- FORMULARIO DE CONSULTA -->
+            <section class="consulta-card" aria-labelledby="titulo-consulta">
+                <h2 id="titulo-consulta" class="solo-lectores">Buscar pedido</h2>
+
+                <form id="formConsulta" novalidate>
+
+                    <div class="consulta-campos">
+                        <div class="campo">
+                            <label for="numeroPedido">Número de pedido</label>
+                            <input type="text" id="numeroPedido" placeholder="Ej. PED-0001" autocomplete="off" maxlength="20">
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefonoPedido">Teléfono</label>
+                            <input type="tel" id="telefonoPedido" placeholder="Ej. 5555-1234" autocomplete="off" maxlength="20">
+                        </div>
+
+                        <button type="submit" class="btn btn-primario btn-consultar">Buscar pedido</button>
+                    </div>
+
+                    <p class="mensaje-error" id="mensajeError" role="alert" hidden></p>
+
+                </form>
+            </section>
+
+
+            <!-- RESULTADO -->
+            <section class="resultado-card" id="resultado" aria-live="polite" hidden>
+
+                <div class="resultado-encabezado">
+                    <div>
+                        <span class="etiqueta">Pedido</span>
+                        <h2 id="resNumero">PED-0001</h2>
+                        <p id="resCliente">Cliente</p>
+                    </div>
+                    <span class="estado-actual" id="resEstado">Pedido recibido</span>
                 </div>
-                <span class="estado-actual" id="resEstado">Pedido recibido</span>
-            </div>
 
-            <!-- LÍNEA DE PROGRESO -->
-            <ol class="progreso" id="progreso" aria-label="Progreso del pedido"></ol>
+                <!-- LÍNEA DE PROGRESO -->
+                <ol class="progreso" id="progreso" aria-label="Progreso del pedido"></ol>
 
-            <p class="resumen-estado" id="resMensaje"></p>
+                <p class="resumen-estado" id="resMensaje"></p>
 
-            <div class="bloque">
-                <h3>Historial</h3>
-                <ul class="historial" id="resHistorial"></ul>
-            </div>
+                <div class="resultado-columnas">
 
-            <div class="bloque">
-                <h3>Productos</h3>
-                <div id="resProductos"></div>
-                <div class="total-fila">
-                    <span>Total</span>
-                    <strong id="resTotal">Q0.00</strong>
+                    <div class="bloque">
+                        <h3>Historial</h3>
+                        <ul class="historial" id="resHistorial"></ul>
+                    </div>
+
+                    <div class="bloque">
+                        <h3>Productos</h3>
+                        <div id="resProductos"></div>
+                        <div class="total-fila">
+                            <span>Total</span>
+                            <strong id="resTotal">Q0.00</strong>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="bloque" id="bloqueNotas" hidden>
-                <h3>Entrega</h3>
-                <p id="resNotas"></p>
-            </div>
+                <div class="bloque bloque-entrega" id="bloqueNotas" hidden>
+                    <h3>Entrega</h3>
+                    <p id="resNotas"></p>
+                </div>
 
-        </section>
+            </section>
+
+        </div>
 
     </main>
+
+
+    <!-- PIE -->
+    <footer class="pie">
+        <div class="tejido" aria-hidden="true"></div>
+        <div class="pie-derechos contenedor">© 2026 Variedades Chiquis, S.A.</div>
+    </footer>
 
     <script src="seguimiento.js"></script>
 </body>

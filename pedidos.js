@@ -1086,7 +1086,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function dibujarEncabezadoPDF(doc, subtitulo) {
         const ancho = doc.internal.pageSize.getWidth();
 
-        doc.setFillColor(42, 52, 65);
+        doc.setFillColor(29, 27, 63);
 
         doc.rect(0, 0, ancho, 36, "F");
 

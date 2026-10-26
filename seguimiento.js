@@ -128,7 +128,7 @@ function mostrarPedido(pedido) {
     // Notas / dirección de entrega
     const bloqueNotas = document.getElementById("bloqueNotas");
     bloqueNotas.hidden = !pedido.notas;
-    document.getElementById("resNotas").textContent = pedido.notas || "";
+    document.getElementById("resNotas").textContent = String(pedido.notas || "").split(" | ").join("\n");
 
     mensajeError.hidden = true;
     resultado.hidden = false;
