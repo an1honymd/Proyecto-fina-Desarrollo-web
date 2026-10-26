@@ -1,0 +1,374 @@
+/* =====================================================
+   SEGUIMIENTO DE PEDIDO (cliente)
+   Misma identidad visual que catalogo.css
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f2;
+    color: #1d3557;
+    line-height: 1.5;
+}
+
+.encabezado {
+    background-color: #1d3557;
+    color: white;
+    padding: 35px 20px 10px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.encabezado p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.btn-regresar {
+    display: inline-block;
+    margin: 15px 20px;
+    padding: 10px 18px;
+    background-color: white;
+    color: #1d3557;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-regresar:hover {
+    background-color: #d99f32;
+    color: white;
+    transform: translateY(-2px);
+}
+
+main {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+/* ---------- Tarjetas ---------- */
+
+.consulta-card,
+.resultado-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.consulta-card h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.consulta-card > p {
+    color: #666;
+    margin-bottom: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.campo input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #1d3557;
+    box-shadow: 0 0 0 3px rgba(29, 53, 87, 0.1);
+}
+
+.mensaje-error {
+    margin-bottom: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fdecee;
+    color: #b02a37;
+    font-size: 14px;
+}
+
+.btn-consultar {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1d3557;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-consultar:hover {
+    background-color: #457b9d;
+    transform: translateY(-2px);
+}
+
+/* ---------- Resultado ---------- */
+
+.resultado-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.etiqueta {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.resultado-encabezado h2 {
+    font-size: 28px;
+}
+
+.resultado-encabezado p {
+    color: #666;
+}
+
+.estado-actual {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #fff3df;
+    color: #b86b1c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.estado-actual.completo {
+    background: #e9f7ef;
+    color: #198754;
+}
+
+/* ---------- Línea de progreso ---------- */
+
+.progreso {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-bottom: 20px;
+}
+
+.paso {
+    position: relative;
+    text-align: center;
+    padding-top: 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.paso::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: -50%;
+    width: 100%;
+    height: 4px;
+    background: #e1e4e8;
+    z-index: 0;
+}
+
+.paso:first-child::before {
+    display: none;
+}
+
+.paso.hecho::before,
+.paso.actual::before {
+    background: #198754;
+}
+
+.paso-icono {
+    position: relative;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e1e4e8;
+    color: #888;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.paso.hecho .paso-icono {
+    background: #198754;
+    color: white;
+}
+
+.paso.actual .paso-icono {
+    background: #d99f32;
+    color: white;
+    box-shadow: 0 0 0 5px rgba(217, 159, 50, 0.25);
+}
+
+.paso.actual,
+.paso.hecho {
+    color: #1d3557;
+    font-weight: bold;
+}
+
+.paso small {
+    display: block;
+    margin-top: 2px;
+    font-weight: normal;
+    color: #888;
+    font-size: 10px;
+}
+
+.resumen-estado {
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #f1f5fa;
+    color: #1d3557;
+    margin-bottom: 25px;
+}
+
+/* ---------- Bloques ---------- */
+
+.bloque {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.bloque h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.bloque p {
+    color: #555;
+}
+
+.historial {
+    list-style: none;
+}
+
+.historial li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px dashed #e5e5e5;
+    font-size: 14px;
+}
+
+.historial li:last-child {
+    border-bottom: none;
+}
+
+.historial span:last-child {
+    color: #888;
+    white-space: nowrap;
+}
+
+.producto-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px dashed #e5e5e5;
+    font-size: 14px;
+}
+
+.producto-fila small {
+    display: block;
+    color: #888;
+}
+
+.total-fila {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.total-fila strong {
+    color: #198754;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+
+    .encabezado h1 {
+        font-size: 28px;
+    }
+
+    .consulta-card,
+    .resultado-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    /* línea de progreso vertical en celular */
+    .progreso {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .paso {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+        padding: 0 0 18px;
+    }
+
+    .paso::before {
+        top: 38px;
+        left: 17px;
+        width: 4px;
+        height: calc(100% - 20px);
+    }
+
+    .paso:first-child::before {
+        display: none;
+    }
+
+    .paso:not(:first-child)::before {
+        top: -18px;
+        height: 22px;
+    }
+
+    .paso-icono {
+        margin: 0;
+        flex-shrink: 0;
+    }
+}

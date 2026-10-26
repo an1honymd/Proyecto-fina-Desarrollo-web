@@ -237,6 +237,8 @@ textarea:focus-visible {
 
     width: 100%;
 
+    text-decoration: none;
+
     display: flex;
     align-items: center;
 
@@ -909,7 +911,6 @@ textarea:focus-visible {
     background: var(--primary-light);
     color: var(--primary);
 }
-
 
 /* =========================================================
    TABLE
@@ -1696,7 +1697,6 @@ kbd {
 
     line-height: 1.5;
 }
-
 
 /* =========================================================
    TYPE

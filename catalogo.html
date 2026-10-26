@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Variedades Chiquis | Catálogo</title>
+
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="encabezado-contenido">
+            <h1>Variedades Chiquis</h1>
+            <p>Bienvenido a nuestra tienda en línea</p>
+        </div>
+        <a href="index.html" class="btn-regresar">← Regresar</a>
+        <a href="seguimiento.html" class="btn-regresar">📦 Consultar mi pedido</a>
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- CATÁLOGO -->
+        <section class="catalogo-section">
+
+            <div class="catalogo-header">
+
+                <div>
+                    <h2>Nuestro catálogo de productos</h2>
+                    <p>Explora nuestros productos y realiza tu pedido.</p>
+                </div>
+
+                <button class="btn-carrito" type="button">
+                    🛒 Mi carrito
+                    <span id="contadorCarrito">0</span>
+                </button>
+
+            </div>
+
+                <!-- BÚSQUEDA Y CATEGORÍAS -->
+            <div class="filtros-catalogo">
+
+                <!-- Barra de búsqueda -->
+                <div class="busqueda-productos">
+                    <span>🔎</span>
+
+                    <input
+                        type="search"
+                        id="buscadorProductos"
+                        placeholder="Buscar productos..."
+                        autocomplete="off">
+                </div>
+
+
+                <!-- Botones de categorías -->
+                <div class="categorias-productos">
+
+                    <button
+                        type="button"
+                        class="btn-categoria activo"
+                        data-categoria="todos">
+                        Todos
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-categoria"
+                        data-categoria="casa">
+                        🏠 Casa
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-categoria"
+                        data-categoria="cocina">
+                        🍳 Cocina
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-categoria"
+                        data-categoria="ropa">
+                        👕 Ropa
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-categoria"
+                        data-categoria="calzado">
+                        👟 Calzado
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-categoria"
+                        data-categoria="otros">
+                        🌂 Otros
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTOS -->
+            <div class="productos-grid" id="productosGrid">
+
+
+                <!-- PRODUCTO 1 -->
+                <article class="producto-card" data-categoria="ropa">
+
+                    <div class="producto-imagen">
+                        <img src="https://walmartgt.vtexassets.com/arquivos/ids/326801/Camisa-Caballero-Manga-Larga-1-28066.jpg?v=638052587722200000"
+                             alt="Producto 1">
+                    </div>
+
+                    <div class="producto-info">
+                        <h3>Camisa Hombre</h3>
+                        <p>
+                          Camisa talla xs hasta la XXL<br>
+                          Manga Larga, (Tela poliester)
+                        </p>
+                        <div class="producto-footer">
+                            <strong>Q 85.00</strong>
+                            <button type="button"class="btn-agregar">+ Agregar
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 2 -->
+                <article class="producto-card" data-categoria="cocina">
+
+                    <div class="producto-imagen">
+                        <img src="https://plazavea.vteximg.com.br/arquivos/ids/404329-418-418/20134696.jpg"
+                             alt="Producto 2">
+                    </div>
+
+                    <div class="producto-info">
+
+                        <h3>Sarten</h3>
+
+                        <p>
+                            Sarten de aluminio, antiadherente, 24cm
+                        </p>
+
+                        <div class="producto-footer">
+
+                            <strong>Q 45.00</strong>
+
+                            <button type="button"
+                                    class="btn-agregar">
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 3 -->
+                <article class="producto-card" data-categoria="ropa">
+
+                    <div class="producto-imagen">
+                        <img src="https://png.pngtree.com/png-clipart/20250522/original/pngtree-elegant-blue-evening-gown-with-a-sweetheart-neckline-fitted-bodice-and-png-image_21056297.png" alt="Producto 3"></div>
+
+                    <div class="producto-info">
+
+                        <h3>Vestido Dama</h3>
+
+                        <p>Vestido de algodón, talla S hasta la XL</p>
+                            <div class="producto-footer">
+                            <strong>Q 305.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div> 
+                </article>
+
+                <!-- PRODUCTO 4 -->
+                <article class="producto-card" data-categoria="calzado">
+                    <div class="producto-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4R3vuKtZ8X2h-15iCNOMTAn8oUa9GsthftP5eKT86xDCBSFxMy3vBT6s&s=10" alt="Producto 4"></div>
+
+                    <div class="producto-info">
+                        <h3>Zapatos Niños</h3>
+                        <p>Zapatos para niños, talla 36 hasta la 42</p>
+                            <div class="producto-footer">
+                            <strong>Q 250.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 5 -->
+                <article class="producto-card" data-categoria="otros">
+                    <div class="producto-imagen">
+                        <img src="https://www.ajumbo.com/web/image/product.template/91667/image_1024?unique=3cc4afd" alt="Producto 5"></div>
+
+                    <div class="producto-info">
+                        <h3>Sombrilla</h3>
+                        <p>Sombrilla de colores, para uso diario</p>
+                            <div class="producto-footer">
+                            <strong>Q 40.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 6 -->
+                <article class="producto-card" data-categoria="ropa">
+                    <div class="producto-imagen">
+                        <img src="https://par2.gt/cdn/shop/files/30077740_1200x.jpg?v=1754030383" alt="Producto 6"></div>
+
+                    <div class="producto-info">
+                        <h3>Calcetines</h3>
+                        <p>Calcetines de algodón, talla S hasta la XL</p>
+                            <div class="producto-footer">
+                            <strong>Q 40.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 7 -->
+                <article class="producto-card" data-categoria="casa">
+                    <div class="producto-imagen">
+                        <img src="https://amsagt.com/wp-content/uploads/2022/01/1800.jpg" alt="Producto 7"></div>
+
+                    <div class="producto-info">
+                        <h3>Almoadas</h3>
+                        <p>Almoadas de algodón, talla S hasta la XL<br>
+                            (no incluyen relleno)</p>
+                            <div class="producto-footer">
+                            <strong>Q 35.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- PRODUCTO 8 -->
+                <article class="producto-card" data-categoria="casa">
+                    <div class="producto-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY0FDc_hLb1wPRDjoX0tJS_moXvQBal5377YYObT5SqrUpOeIv_FWKj5U&s=10" alt="Producto 8"></div>
+
+                    <div class="producto-info">
+                        <h3>Sillas Pásticas</h3>
+                        <p>Sillas pásticas de colores, para uso diario<br>
+                            solamente por docena</p>
+                            <div class="producto-footer">
+                            <strong>Q 35.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- PRODUCTO 9 -->
+                <article class="producto-card" data-categoria="otros">
+                    <div class="producto-imagen">
+                        <img src="https://walmartgt.vtexassets.com/arquivos/ids/335618-800-450?v=638088430440800000&width=800&height=450&aspect=true" alt="Producto 9"></div>
+
+                    <div class="producto-info">
+                        <h3>picinas</h3>
+                        <p>inflables para uso exterior<br>
+                        (no incluyen inflador)</p>
+                            <div class="producto-footer">
+                            <strong>Q 35.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!---producto 10-->
+                <article class="producto-card" data-categoria="calzado">
+                    <div class="producto-imagen">
+                        <img src="https://img.pacifiko.com/PROD/resize/1/250x250/B0CG9Q9DJC.jpg" alt="Producto 9"></div>
+
+                    <div class="producto-info">
+                        <h3>Botas para Invierno</h3>
+                        <p>Acolchonada, disponibles:<br>
+                         en talla 28 asta la 36.</p>
+                            <div class="producto-footer">
+                            <strong>Q 450.00</strong>
+                            <button type="button" class="btn-agregar">+ Agregar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+
+
+            <!-- Ventana del carrito -->
+            <div id="ventanaCarrito" class="ventana-carrito">
+                <div class="carrito-contenido">
+
+                    <button type="button" id="cerrarCarrito" class="cerrar-carrito">
+                        ✕
+                    </button>
+
+                    <h2>Mi carrito de compras</h2>
+
+                    <div id="listaCarrito">
+                        <p>Tu carrito está vacío.</p>
+                    </div>
+
+                    <h3>
+                        Total: <span id="totalCarrito">Q0.00</span>
+                    </h3>
+
+                    <button type="button" id="continuarPedido" class="btn-continuar">
+                        Continuar con el pedido
+                    </button>
+
+                </div>
+            </div>
+
+
+
+        <!-- DATOS DEL CLIENTE -->
+        <div id="ventanaDatosCliente" class="ventana-datos-cliente">
+        <div class="datos-cliente-contenido">
+            <button type="button" id="cerrarDatosCliente" class="cerrar-datos">
+            ✕
+        </button>
+
+            <h2>Datos para realizar mi pedido</h2>
+
+            <form id="formularioPedido">
+
+
+                <!-- NOMBRE -->
+                <div class="campo-cliente">
+
+                    <label for="nombreCliente">
+                        Nombre completo:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreCliente"
+                        placeholder="Ingresa tu nombre"
+                        required>
+
+                </div>
+
+
+                <!-- TELÉFONO -->
+                <div class="campo-cliente">
+
+                    <label for="telefonoCliente">
+                        Teléfono:
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefonoCliente"
+                        placeholder="Ingresa tu teléfono"
+                        required>
+
+                </div>
+
+
+                <!-- DIRECCIÓN -->
+                <div class="campo-cliente">
+
+                    <label for="direccionCliente">
+                        Dirección de entrega:
+                    </label>
+
+                    <textarea
+                        id="direccionCliente"
+                        placeholder="Ingresa tu dirección"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- OBSERVACIONES -->
+                <div class="campo-cliente">
+
+                    <label for="observacionesCliente">
+                        Observaciones:
+                    </label>
+
+                    <textarea
+                        id="observacionesCliente"
+                        placeholder="Información adicional (opcional)"></textarea>
+
+                </div>
+
+
+                <!-- BOTÓN -->
+                <button
+                    type="submit"
+                    class="btn-realizar-pedido">
+
+                    Realizar pedido
+
+                </button>
+
+            </form>
+
+           </div>
+            </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="catalogo.js"></script>
+
+</body>
+
+</html>
